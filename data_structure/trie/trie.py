@@ -16,7 +16,7 @@ class Trie:
         return TrieNode()
 
     def _charToIndex(self, char):
-        return ord(ch) - ord('a')
+        return ord(char) - ord('a')
 
     def insert(self, key):
 
@@ -25,9 +25,9 @@ class Trie:
 
         for level in range(length):
             index = self._charToIndex(key[level])
-            if not nextNode.children[level]:
-                nextNode.children[level] = self.getNode()
-            nextNode = nextNode.children[level]
+            if not nextNode.children[index]:
+                nextNode.children[index] = self.getNode()
+            nextNode = nextNode.children[index]
 
         nextNode.isEndOfWord = True
 
@@ -38,13 +38,25 @@ class Trie:
 
         for level in range(length):
             index = self._charToIndex(key[level])
-            if not nextNode.chilren[level]:
+            if not nextNode.children[index]:
                 return False
-            nextNode = nextNode.children[level]
+            nextNode = nextNode.children[index]
 
-        return nextNode != null and nextNode.isEndOfWord
+        return nextNode != None and nextNode.isEndOfWord
 
 def main():
+    keys = ["the","a","there","anaswe","any", "by","their"]
+    output = ["Not present in trie", "Present in trie"]
+
+    t = Trie()
+
+    for key in keys:
+        t.insert(key)
+
+    print("{} ---- {}".format("the",output[t.search("the")]))
+    print("{} ---- {}".format("these",output[t.search("these")]))
+    print("{} ---- {}".format("their",output[t.search("their")]))
+    print("{} ---- {}".format("thaw",output[t.search("thaw")]))
 
 if __name__ == '__main__':
-    print ("I am main")
+    main()

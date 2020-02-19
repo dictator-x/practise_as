@@ -11,8 +11,12 @@ class Solution:
             a = a // 10
             ret = ret * 10 + r
 
-        return ret * -1 if x < 0 else ret
-
+        if x > 0 and num < 2147483647:
+            return ret
+        elif x < 0 and num <= 2147483647:
+            return -ret
+        else:
+            return 0
 if __name__ == "__main__":
     solution = Solution()
-    print(solution.reverse(-120))
+    print(solution.reverse(0))

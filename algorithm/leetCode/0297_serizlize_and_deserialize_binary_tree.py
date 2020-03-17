@@ -35,3 +35,5 @@ class Codec:
                 node.left = doDeserialize(data)
                 node.right = doDeserialize(data)
                 return node
+
+        return doDeserialize(data)

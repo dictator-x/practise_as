@@ -8,6 +8,7 @@ class Solution:
         start    = 0
         end      = 0
 
+        # row and column represents any two point in the string
         dp_map = [ [ 0 for _ in range(s_length) ] for _ in range(s_length) ]
 
         # Initial dp_map

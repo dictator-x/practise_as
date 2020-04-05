@@ -1,7 +1,6 @@
 """
 42. Trapping Rain Water
 """
-
 from typing import List
 
 class Solution:
@@ -16,11 +15,12 @@ class Solution:
 
         while l < r:
             if l_max < r_max:
-                ret = height[l] - l_max
+                ret += l_max - height[l]
                 l += 1
+                # pre assgin the next height to prevent l_max - height[l] < 0
                 l_max = max(height[l], l_max)
             else:
-                ret = height[r] - r_max
+                ret += r_max - height[r]
                 r -= 1
                 r_max = max(height[r], r_max)
         return ret;

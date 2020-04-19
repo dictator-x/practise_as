@@ -33,6 +33,8 @@ class Solution:
                         char = s[j]
                         print(s)
                         # Only consider invalid char.
+                        # sequence duplicate string are same, so do not need
+                        # to consider. like "((((" or "))"
                         if char == pattern[1] and ( j == lastRemovePosition or char != s[j-1] ):
                             # i will be >=j
                             dfs(pattern, s[:j] + s[j+1:], i, j)

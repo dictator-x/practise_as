@@ -1,7 +1,7 @@
 """
 887. Super Egg Drop
 """
-
+# This solution do not accept by leetCdoe
 import sys
 class Solution:
     def superEggDrop(self, K: int, N: int) -> int:
@@ -37,4 +37,4 @@ class Solution:
 
 if __name__ == "__main__":
     solution = Solution()
-    print(solution.superEggDrop(10, 10000))
+    print(solution.superEggDrop(100, 10000))

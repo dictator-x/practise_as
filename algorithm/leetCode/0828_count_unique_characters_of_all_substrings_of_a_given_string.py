@@ -4,6 +4,9 @@
 
 from collections import defaultdict
 
+# Convert problem to:
+# total number of substring that contain a unique characters for all characters
+# in the string
 class Solution:
     def uniqueLetterString(self, s: str) -> int:
         mod = 10 ** 9 + 7
